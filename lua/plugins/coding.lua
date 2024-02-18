@@ -14,6 +14,7 @@ return {
   -- add jsonls and schemastore packages, and setup treesitter for json, json5 and jsonc
   { import = "lazyvim.plugins.extras.lang.json" },
   { import = "lazyvim.plugins.extras.formatting.prettier" },
+  { import = "lazyvim.plugins.extras.linting.eslint" },
 
   -- add any tools you want to have installed below
   {
@@ -26,5 +27,15 @@ return {
         "ruff",
       },
     },
+  },
+
+  -- auto-detect indentations and set tab width accordingly
+  {
+    "nmac427/guess-indent.nvim",
+    config = function()
+      require("guess-indent").setup({
+        ignore_ft = { "json", "yaml", "toml" },
+      })
+    end,
   },
 }
