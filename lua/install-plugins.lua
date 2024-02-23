@@ -78,13 +78,13 @@ require('lazy').setup({
     {
       -- Adds git related signs to the gutter, as well as utilities for managing changes
       'lewis6991/gitsigns.nvim',
-      opts = { },
+      opts = {},
     },
     {
       -- Set lualine as statusline
       'nvim-lualine/lualine.nvim',
       -- See `:help lualine.txt`
-      opts = { },
+      opts = {},
     },
 
     {
@@ -128,38 +128,21 @@ require('lazy').setup({
       },
       build = ':TSUpdate',
     },
+    {
+      "nvim-neo-tree/neo-tree.nvim",
+      branch = "v3.x",
+      dependencies = {
+        "nvim-lua/plenary.nvim",
+        "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+        "MunifTanjim/nui.nvim",
+        "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+      },
+    },
 
     -- require 'kickstart.plugins.autoformat',
     -- require 'kickstart.plugins.debug',
 
     { import = 'plugins' },
-  },
-  defaults = {
-    -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
-    -- If you know what you're doing, you can set this to `true` to have all your custom plugins lazy-loaded by default.
-    lazy = false,
-    -- It's recommended to leave version=false for now, since a lot the plugin that support versioning,
-    -- have outdated releases, which may break your Neovim install.
-    version = false, -- always use the latest git commit
-    -- version = "*", -- try installing the latest stable version for plugins that support semver
-    colorscheme = "tokyonight-moon",
-  },
-  install = { colorscheme = { "tokyonight", "habamax" } },
-  checker = { enabled = true }, -- automatically check for plugin updates
-  performance = {
-    rtp = {
-      -- disable some rtp plugins
-      disabled_plugins = {
-        "gzip",
-        -- "matchit",
-        -- "matchparen",
-        -- "netrwPlugin",
-        "tarPlugin",
-        "tohtml",
-        "tutor",
-        "zipPlugin",
-      },
-    },
   },
 })
 
