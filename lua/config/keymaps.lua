@@ -1,5 +1,9 @@
 -- [[ Basic Keymaps ]]
 
+-- Easy escape from insert / visual mode
+vim.keymap.set({ 'i' }, 'jk', '<Esc>')
+vim.keymap.set({ 'i' }, 'kj', '<Esc>')
+
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
