@@ -36,6 +36,10 @@ vim.o.timeoutlen = 300
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
+-- default to tab width as 4
+vim.o.shiftwidth = 4
+vim.o.tabstop = 4
+
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
 vim.cmd 'colorscheme tokyonight-moon'
