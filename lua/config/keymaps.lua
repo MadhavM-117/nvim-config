@@ -4,5 +4,5 @@
 
 local map = vim.keymap.set
 
-map({ "i", "v" }, "jk", "<Esc>", { desc = "Easy Escape from Insert Mode" })
-map({ "i", "v" }, "kj", "<Esc>", { desc = "Easy Escape from Insert Mode" })
+map({ "i" }, "kj", "<Esc>", { desc = "Easy Escape from Insert Mode" })
+map({ "i" }, "jk", "<Esc>", { desc = "Easy Escape from Insert Mode" })
