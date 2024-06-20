@@ -6,7 +6,7 @@ return {
     {
       '<leader>fe',
       function()
-        require('neo-tree.command').execute { dir = vim.loop.cwd(), action = 'focus' }
+        require('neo-tree.command').execute { toggle = true, dir = vim.loop.cwd()  }
       end,
       desc = 'Explorer NeoTree (cwd)',
     },
@@ -14,21 +14,21 @@ return {
     {
       '<leader>ge',
       function()
-        require('neo-tree.command').execute { source = 'git_status', action = 'focus' }
+        require('neo-tree.command').execute { source = 'git_status', toggle = true  }
       end,
       desc = 'Git explorer',
     },
     {
       '<leader>be',
       function()
-        require('neo-tree.command').execute { source = 'buffers', action = 'focus' }
+        require('neo-tree.command').execute { source = 'buffers', toggle = true }
       end,
       desc = 'Buffer explorer',
     },
     {
       '<leader>ce',
       function()
-        require('neo-tree.command').execute { source = 'document_symbols', action = 'focus' }
+        require('neo-tree.command').execute { source = 'document_symbols', toggle = true }
       end,
       desc = '[C]ode Symbol [e]xplorer',
     },
