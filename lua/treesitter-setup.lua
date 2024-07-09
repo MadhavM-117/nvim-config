@@ -21,6 +21,7 @@ vim.defer_fn(function()
       'markdown',
       'markdown_inline',
       'printf',
+      'prisma',
       'python',
       'query',
       'regex',
