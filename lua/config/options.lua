@@ -44,7 +44,8 @@ vim.o.tabstop = 4
 vim.o.termguicolors = true
 vim.cmd 'colorscheme tokyonight-moon'
 
--- setting conceallevel for obsidian supports
-vim.o.conceallevel = 1
+-- Neorg config
+vim.wo.conceallevel = 2
+vim.wo.foldlevel = 99
 
 -- vim: ts=2 sts=2 sw=2 et
