@@ -30,6 +30,19 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- Neorg keymaps
+
 vim.keymap.set('n', '<leader>nr', '<cmd>Neorg return<CR>', { desc = '[N]eorg [Return]' })
+vim.keymap.set('n', '<leader>nj', function()
+  if vim.bo.buftype ~= '' then
+    -- work around for the weirdness when you try to enter journal while on a neotree buffer
+    vim.api.nvim_command ':Neorg index'
+    vim.defer_fn(function()
+      vim.api.nvim_command ':Neorg journal today'
+    end, 100)
+  else
+    vim.api.nvim_command ':Neorg journal today'
+  end
+end, { desc = '[N]eorg - [J]ournal Today' })
+vim.keymap.set('n', '<leader>nm', '<cmd>Neorg inject-metadata<CR>', { desc = '[N]eorg - Inject [M]etadata' })
 
 -- vim: ts=2 sts=2 sw=2 et
