@@ -41,6 +41,10 @@ return {
       local stat = vim.loop.fs_stat(vim.fn.argv(0))
       if stat and stat.type == 'directory' then
         require 'neo-tree'
+        -- This is a temporary hack to fix neotree colorscheme issue. Refer: https://github.com/LazyVim/LazyVim/issues/2527#issuecomment-1948347334
+        vim.defer_fn(function ()
+          vim.cmd.colorscheme('tokyonight-moon');
+        end, 100)
       end
     end
   end,
