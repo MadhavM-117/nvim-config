@@ -6,11 +6,17 @@ return {
         require("neorg").setup {
             load = {
                 ["core.defaults"] = {},
-                ["core.concealer"] = {},
+                ["core.ui.calendar"] = {},
+                ["core.concealer"] = {
+                    config = {
+                        icon_preset = "diamond",
+                    },
+                },
                 ["core.dirman"] = {
                     config = {
                         workspaces = {
                             notes = "~/personal/notes",
+                            marble = "~/marble/notes",
                         },
                         default_workspace = "notes",
                     },
