@@ -32,7 +32,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- Neorg keymaps
 
 vim.keymap.set('n', '<leader>nr', '<cmd>Neorg return<CR>', { desc = '[N]eorg [Return]' })
-vim.keymap.set('n', '<leader>nj', function()
+
+vim.keymap.set('n', '<leader>njt', function()
   if vim.bo.buftype ~= '' then
     -- work around for the weirdness when you try to enter journal while on a neotree buffer
     vim.api.nvim_command ':Neorg index'
@@ -42,8 +43,20 @@ vim.keymap.set('n', '<leader>nj', function()
   else
     vim.api.nvim_command ':Neorg journal today'
   end
-end, { desc = '[N]eorg - [J]ournal Today' })
-vim.keymap.set('n', '<leader>nm', '<cmd>Neorg inject-metadata<CR>', { desc = '[N]eorg - Inject [M]etadata' })
+end, { desc = '[N]eorg - [J]ournal [T]oday' })
+
+vim.keymap.set('n', '<leader>njc', function()
+  if vim.bo.buftype ~= '' then
+    -- work around for the weirdness when you try to enter journal while on a neotree buffer
+    vim.api.nvim_command ':Neorg index'
+    vim.defer_fn(function()
+      vim.api.nvim_command ':Neorg journal custom'
+    end, 100)
+  else
+    vim.api.nvim_command ':Neorg journal custom'
+  end
+end, { desc = '[N]eorg - [J]ournal @ [C]ustom Date' })
+
 vim.keymap.set('n', '<leader>nl', '<cmd>Neorg keybind all core.looking-glass.magnify-code-block<CR>', { desc = '[N]eorg - [L]ooking Glass' })
 
 -- vim: ts=2 sts=2 sw=2 et

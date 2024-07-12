@@ -3,6 +3,7 @@ return {
   config = function()
     require('neorg').setup {
       load = {
+        ['core.clipboard.code-blocks'] = {},
         ['core.completion'] = { config = { engine = 'nvim-cmp' } },
         ['core.concealer'] = {
           config = {
@@ -27,6 +28,7 @@ return {
         ['core.integrations.nvim-cmp'] = {},
         ['core.integrations.telescope'] = {},
         ['core.looking-glass'] = {},
+        ['core.text-objects'] = {},
         ['core.ui.calendar'] = {},
       },
     }
