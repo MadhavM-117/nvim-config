@@ -2,15 +2,15 @@ return {
   'rcarriga/nvim-notify',
   keys = {
     {
-      "<leader>un",
+      '<leader>un',
       function()
-        require("notify").dismiss({ silent = true, pending = true })
+        require('notify').dismiss { silent = true, pending = true }
       end,
-      desc = "Dismiss All Notifications",
+      desc = 'Dismiss All Notifications',
     },
   },
   opts = {
-    stages = "static",
+    stages = 'static',
     timeout = 3000,
     max_height = function()
       return math.floor(vim.o.lines * 0.75)
@@ -22,4 +22,8 @@ return {
       vim.api.nvim_win_set_config(win, { zindex = 100 })
     end,
   },
+  init = function()
+    -- when noice is not enabled, install notify on VeryLazy
+    vim.notify = require 'notify'
+  end,
 }

@@ -44,5 +44,6 @@ vim.keymap.set('n', '<leader>nj', function()
   end
 end, { desc = '[N]eorg - [J]ournal Today' })
 vim.keymap.set('n', '<leader>nm', '<cmd>Neorg inject-metadata<CR>', { desc = '[N]eorg - Inject [M]etadata' })
+vim.keymap.set('n', '<leader>nl', '<cmd>Neorg keybind all core.looking-glass.magnify-code-block<CR>', { desc = '[N]eorg - [L]ooking Glass' })
 
 -- vim: ts=2 sts=2 sw=2 et

@@ -3,20 +3,13 @@ return {
   config = function()
     require('neorg').setup {
       load = {
-        ['core.defaults'] = {},
-        ['core.ui.calendar'] = {},
+        ['core.completion'] = { config = { engine = 'nvim-cmp' } },
         ['core.concealer'] = {
           config = {
             icon_preset = 'diamond',
           },
         },
-        ['core.esupports.metagen'] = {
-          config = {
-            type = 'auto',
-          },
-        },
-        ['core.completion'] = { config = { engine = 'nvim-cmp' } },
-        ['core.integrations.nvim-cmp'] = {},
+        ['core.defaults'] = {},
         ['core.dirman'] = {
           config = {
             workspaces = {
@@ -26,7 +19,15 @@ return {
             default_workspace = 'notes',
           },
         },
+        ['core.esupports.metagen'] = {
+          config = {
+            type = 'auto',
+          },
+        },
+        ['core.integrations.nvim-cmp'] = {},
         ['core.integrations.telescope'] = {},
+        ['core.looking-glass'] = {},
+        ['core.ui.calendar'] = {},
       },
     }
   end,

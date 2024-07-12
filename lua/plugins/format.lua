@@ -1,5 +1,6 @@
 return {
   'stevearc/conform.nvim',
+  lazy = false,
   keys = {
     -- format code blocks embedded in a file of [possibly] another type
     {
