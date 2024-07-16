@@ -15,9 +15,9 @@ local on_attach = function(_, bufnr)
     vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
   end
 
-  nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+  nmap('<leader>cr', vim.lsp.buf.rename, '[R]e[n]ame')
   nmap('<leader>ca', function()
-    vim.lsp.buf.code_action { context = { only = { 'quickfix', 'refactor', 'source' } } }
+    vim.lsp.buf.code_action { context = { only = { 'quickfix', 'refactor', 'source' }, diagnostics = {} } }
   end, '[C]ode [A]ction')
 
   nmap('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
@@ -46,24 +46,25 @@ local on_attach = function(_, bufnr)
 end
 
 -- document existing key chains
-require('which-key').register {
-  ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
-  ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
-  ['<leader>f'] = { name = '[F]ile', _ = 'which_key_ignore' },
-  ['<leader>g'] = { name = '[G]it', _ = 'which_key_ignore' },
-  ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
-  ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
-  ['<leader>t'] = { name = '[T]oggle', _ = 'which_key_ignore' },
-  ['<leader>u'] = { name = '[U]ndo', _ = 'which_key_ignore' },
-  ['<leader>v'] = { name = '[V]irtual Environment', _ = 'which_key_ignore' },
-  ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
-}
+require('which-key').add({
+  { '<leader>c', group = '[C]ode', icon = '' },
+  { '<leader>d', group = '[D]ocument', icon = '' },
+  { '<leader>f', group = '[F]ile', icon = '' },
+  { '<leader>g', group = '[G]it', icon = '' },
+  { '<leader>s', group = '[S]earch', icon = '' },
+  { '<leader>n', group = '[N]otes', icon = '' },
+  { '<leader>t', group = '[T]oggle', icon = '' },
+  { '<leader>u', group = '[U]ndo', icon = '' },
+  { '<leader>v', group = '[V]irtual Environment', icon = '󰍛' },
+  { '<leader>w', group = '[W]orkspace', icon = '' },
+})
 -- register which-key VISUAL mode
 -- required for visual <leader>hs (hunk stage) to work
-require('which-key').register({
-  ['<leader>'] = { name = 'VISUAL <leader>' },
-  ['<leader>h'] = { 'Git [H]unk' },
-}, { mode = 'v' })
+--
+require('which-key').add({
+  { "<leader>", group = "VISUAL <leader>", mode = "v" },
+  { "<leader>h", desc = "Git [H]unk", icon = '', mode = "v" },
+})
 
 -- mason-lspconfig requires that these setup functions are called in this order
 -- before setting up the servers.
@@ -85,7 +86,7 @@ local servers = {
     Lua = {
       workspace = { checkThirdParty = false },
       telemetry = { enable = false },
-      -- NOTE: toggle below to ignore Lua_LS's noisy `missing-fields` warnings
+      -- note: toggle below to ignore lua_ls's noisy `missing-fields` warnings
       -- diagnostics = { disable = { 'missing-fields' } },
     },
   },

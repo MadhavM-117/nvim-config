@@ -42,10 +42,10 @@ return {
 
       -- Actions
       -- visual mode
-      map('v', '<leader>ghs', function()
+      map('v', '<leader>hs', function()
         gs.stage_hunk { vim.fn.line '.', vim.fn.line 'v' }
       end, { desc = 'stage git hunk' })
-      map('v', '<leader>ghr', function()
+      map('v', '<leader>hr', function()
         gs.reset_hunk { vim.fn.line '.', vim.fn.line 'v' }
       end, { desc = 'reset git hunk' })
       -- normal mode
