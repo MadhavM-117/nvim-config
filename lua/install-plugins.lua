@@ -141,7 +141,7 @@ require('lazy').setup {
     },
 
     {
-      'nvim-tree/nvim-web-devicons',   -- not strictly required, but recommended
+      'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
     },
 
     { 'nvim-neotest/nvim-nio' },

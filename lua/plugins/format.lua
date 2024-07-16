@@ -6,7 +6,7 @@ return {
     {
       '<leader>cF',
       function()
-        require('conform').format { formatters = { 'injected' }, timeout_ms = 1000 }
+        require('conform').format { formatters = { 'injected' }, timeout_ms = 1000, lsp_format = "fallback" }
       end,
       mode = { 'n', 'v' },
       desc = 'Format Injected Langs',
@@ -14,7 +14,7 @@ return {
     {
       '<leader>cf',
       function()
-        require('conform').format { timeout_ms = 1000 }
+        require('conform').format { timeout_ms = 1000, lsp_format = "fallback" }
       end,
       mode = { 'n', 'v' },
       desc = 'Format Code',
@@ -26,8 +26,8 @@ return {
     -- LazyVim will use these options when formatting with the conform.nvim formatter
     format = {
       timeout_ms = 3000,
-      async = false, -- not recommended to change
-      quiet = false, -- not recommended to change
+      async = false,       -- not recommended to change
+      quiet = false,       -- not recommended to change
       lsp_fallback = true, -- not recommended to change
     },
     formatters_by_ft = {
@@ -45,8 +45,8 @@ return {
     },
     format_on_save = {
       timeout_ms = 3000,
-      async = false, -- not recommended to change
-      quiet = false, -- not recommended to change
+      async = false,       -- not recommended to change
+      quiet = false,       -- not recommended to change
       lsp_fallback = true, -- not recommended to change
     },
     -- The options you set here will be merged with the builtin formatters.

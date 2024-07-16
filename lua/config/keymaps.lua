@@ -3,6 +3,7 @@
 -- Easy escape from insert / visual mode
 vim.keymap.set({ 'i' }, 'jk', '<Esc>')
 vim.keymap.set({ 'i' }, 'kj', '<Esc>')
+vim.keymap.set({ 't' }, 'jk', [[<C-\><C-n>]])
 
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
