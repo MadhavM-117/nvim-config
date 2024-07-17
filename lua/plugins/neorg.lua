@@ -27,12 +27,12 @@ return {
         },
         ['core.integrations.nvim-cmp'] = {},
         ['core.integrations.telescope'] = {},
+        ['core.keybinds'] = {},
         ['core.looking-glass'] = {},
         ['core.text-objects'] = {},
         ['core.ui.calendar'] = {},
       },
     }
-
 
     vim.keymap.set('n', '<leader>nr', '<cmd>Neorg return<CR>', { desc = '[N]eorg [Return]' })
 
@@ -59,9 +59,7 @@ return {
         vim.api.nvim_command ':Neorg journal custom'
       end
     end, { desc = '[N]eorg - [J]ournal @ [C]ustom Date' })
-
-    vim.keymap.set('n', '<leader>nl', '<cmd>Neorg keybind all core.looking-glass.magnify-code-block<CR>',
-      { desc = '[N]eorg - [L]ooking Glass' })
+    -- TODO: this needs to be fixed. Broken after Neorg update.
+    vim.keymap.set('n', '<leader>nl', '<cmd>Neorg keybind all core.looking-glass.magnify-code-block<CR>', { desc = '[N]eorg - [L]ooking Glass' })
   end,
-
 }
