@@ -7,12 +7,13 @@ local on_attach = function(_, bufnr)
   --
   -- In this case, we create a function that lets us more easily define mappings specific
   -- for LSP related items. It sets the mode, buffer and description for us each time.
+  local wk = require('which-key')
   local nmap = function(keys, func, desc)
     if desc then
       desc = 'LSP: ' .. desc
     end
 
-    vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
+    wk.add({ keys, func, buffer = bufnr, desc = desc })
   end
 
   nmap('<leader>cr', vim.lsp.buf.rename, '[R]e[n]ame')
@@ -45,26 +46,6 @@ local on_attach = function(_, bufnr)
   end, { desc = 'Format current buffer with LSP' })
 end
 
--- document existing key chains
-require('which-key').add({
-  { '<leader>c', group = '[C]ode', icon = '' },
-  { '<leader>d', group = '[D]ocument', icon = '' },
-  { '<leader>f', group = '[F]ile', icon = '' },
-  { '<leader>g', group = '[G]it', icon = '' },
-  { '<leader>s', group = '[S]earch', icon = '' },
-  { '<leader>n', group = '[N]otes', icon = '' },
-  { '<leader>t', group = '[T]oggle', icon = '' },
-  { '<leader>u', group = '[U]ndo', icon = '' },
-  { '<leader>v', group = '[V]irtual Environment', icon = '󰍛' },
-  { '<leader>w', group = '[W]orkspace', icon = '' },
-})
--- register which-key VISUAL mode
--- required for visual <leader>hs (hunk stage) to work
---
-require('which-key').add({
-  { "<leader>", group = "VISUAL <leader>", mode = "v" },
-  { "<leader>h", desc = "Git [H]unk", icon = '', mode = "v" },
-})
 
 -- mason-lspconfig requires that these setup functions are called in this order
 -- before setting up the servers.
