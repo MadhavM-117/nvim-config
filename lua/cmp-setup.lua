@@ -5,6 +5,10 @@ local luasnip = require 'luasnip'
 require('luasnip.loaders.from_vscode').lazy_load()
 luasnip.config.setup {}
 
+cmp.config.formatting = {
+  format = require("tailwindcss-colorizer-cmp").formatter
+}
+
 cmp.setup {
   snippet = {
     expand = function(args)
@@ -48,6 +52,7 @@ cmp.setup {
     { name = 'luasnip' },
     { name = 'path' },
     { name = 'neorg' },
+    { name = 'tailwindcss-colorizer-cmp' }
   },
 }
 

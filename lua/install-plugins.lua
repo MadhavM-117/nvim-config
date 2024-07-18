@@ -43,6 +43,7 @@ require('lazy').setup {
         -- Additional lua configuration, makes nvim stuff amazing!
         'folke/neodev.nvim',
       },
+
     },
 
     {
@@ -72,6 +73,15 @@ require('lazy').setup {
         'rafamadriz/friendly-snippets',
         'roobert/tailwindcss-colorizer-cmp.nvim',
       },
+    },
+    {
+      "roobert/tailwindcss-colorizer-cmp.nvim",
+      -- optionally, override the default options:
+      config = function()
+        require("tailwindcss-colorizer-cmp").setup({
+          color_square_width = 2,
+        })
+      end
     },
 
     -- Useful plugin to show you pending keybinds.
