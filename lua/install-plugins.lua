@@ -150,8 +150,22 @@ require('lazy').setup {
       },
     },
 
+
+
     {
       'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
+    },
+
+    -- rename functions and imports, on file rename / move
+    {
+      "antosha417/nvim-lsp-file-operations",
+      dependencies = {
+        "nvim-lua/plenary.nvim",
+        "nvim-neo-tree/neo-tree.nvim",
+      },
+      config = function()
+        require("lsp-file-operations").setup({ timeout_ms = 1000 })
+      end,
     },
 
     { 'nvim-neotest/nvim-nio' },
