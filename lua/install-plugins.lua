@@ -92,13 +92,6 @@ require('lazy').setup {
       opts = {},
     },
     {
-      -- Set lualine as statusline
-      'nvim-lualine/lualine.nvim',
-      -- See `:help lualine.txt`
-      opts = {},
-    },
-
-    {
       -- Add indentation guides even on blank lines
       'lukas-reineke/indent-blankline.nvim',
       -- Enable `lukas-reineke/indent-blankline.nvim`
