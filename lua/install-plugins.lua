@@ -38,12 +38,11 @@ require('lazy').setup {
 
         -- Useful status updates for LSP
         -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-        { 'j-hui/fidget.nvim',       opts = {} },
+        { 'j-hui/fidget.nvim', opts = {} },
 
         -- Additional lua configuration, makes nvim stuff amazing!
         'folke/neodev.nvim',
       },
-
     },
 
     {
@@ -75,17 +74,17 @@ require('lazy').setup {
       },
     },
     {
-      "roobert/tailwindcss-colorizer-cmp.nvim",
+      'roobert/tailwindcss-colorizer-cmp.nvim',
       -- optionally, override the default options:
       config = function()
-        require("tailwindcss-colorizer-cmp").setup({
+        require('tailwindcss-colorizer-cmp').setup {
           color_square_width = 2,
-        })
-      end
+        }
+      end,
     },
 
     -- Useful plugin to show you pending keybinds.
-    { 'folke/which-key.nvim',  opts = {} },
+    { 'folke/which-key.nvim', opts = {} },
     {
       -- Adds git related signs to the gutter, as well as utilities for managing changes
       'lewis6991/gitsigns.nvim',
@@ -109,6 +108,7 @@ require('lazy').setup {
       branch = '0.1.x',
       dependencies = {
         'nvim-lua/plenary.nvim',
+        'nvim-telescope/telescope-ui-select.nvim',
         -- Fuzzy Finder Algorithm which requires local dependencies to be built.
         -- Only load if `make` is available. Make sure you have the system
         -- requirements installed.
@@ -139,11 +139,9 @@ require('lazy').setup {
         'nvim-lua/plenary.nvim',
         'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
         'MunifTanjim/nui.nvim',
-        '3rd/image.nvim',              -- Optional image support in preview window: See `# Preview Mode` for more information
+        '3rd/image.nvim', -- Optional image support in preview window: See `# Preview Mode` for more information
       },
     },
-
-
 
     {
       'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
@@ -151,13 +149,13 @@ require('lazy').setup {
 
     -- rename functions and imports, on file rename / move
     {
-      "antosha417/nvim-lsp-file-operations",
+      'antosha417/nvim-lsp-file-operations',
       dependencies = {
-        "nvim-lua/plenary.nvim",
-        "nvim-neo-tree/neo-tree.nvim",
+        'nvim-lua/plenary.nvim',
+        'nvim-neo-tree/neo-tree.nvim',
       },
       config = function()
-        require("lsp-file-operations").setup({ timeout_ms = 1000 })
+        require('lsp-file-operations').setup { timeout_ms = 1000 }
       end,
     },
 
@@ -167,7 +165,7 @@ require('lazy').setup {
     -- require 'kickstart.plugins.debug',
     {
       'nvim-neorg/neorg',
-      lazy = false,  -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
+      lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
       version = '*', -- Pin Neorg to the latest stable release
       dependencies = { { 'nvim-neorg/neorg-telescope' } },
     },
