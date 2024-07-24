@@ -7,13 +7,13 @@ local on_attach = function(_, bufnr)
   --
   -- In this case, we create a function that lets us more easily define mappings specific
   -- for LSP related items. It sets the mode, buffer and description for us each time.
-  local wk = require('which-key')
+  local wk = require 'which-key'
   local nmap = function(keys, func, desc)
     if desc then
       desc = 'LSP: ' .. desc
     end
 
-    wk.add({ keys, func, buffer = bufnr, desc = desc })
+    wk.add { keys, func, buffer = bufnr, desc = desc }
   end
 
   nmap('<leader>cr', vim.lsp.buf.rename, '[R]e[n]ame')
@@ -46,7 +46,6 @@ local on_attach = function(_, bufnr)
   end, { desc = 'Format current buffer with LSP' })
 end
 
-
 -- mason-lspconfig requires that these setup functions are called in this order
 -- before setting up the servers.
 require('mason').setup()
@@ -61,7 +60,7 @@ require('mason-lspconfig').setup()
 --  If you want to override the default filetypes that your language server will attach to you can
 --  define the property 'filetypes' to the map in question.
 local servers = {
-  eslint = { settings = { workingDirectories = { mode = "auto" } } },
+  eslint = { settings = { workingDirectories = { mode = 'auto' } } },
   html = { filetypes = { 'html', 'twig', 'hbs' } },
 
   lua_ls = {
@@ -76,7 +75,44 @@ local servers = {
   pyright = {},
   rust_analyzer = {},
   tailwindcss = {},
-  tsserver = {},
+  vtsls = {
+    -- explicitly add default filetypes, so that we can extend
+    -- them in related extras
+    filetypes = {
+      'javascript',
+      'javascriptreact',
+      'javascript.jsx',
+      'typescript',
+      'typescriptreact',
+      'typescript.tsx',
+    },
+    settings = {
+      complete_function_calls = true,
+      vtsls = {
+        enableMoveToFileCodeAction = true,
+        autoUseWorkspaceTsdk = true,
+        experimental = {
+          completion = {
+            enableServerSideFuzzyMatch = true,
+          },
+        },
+      },
+      typescript = {
+        updateImportsOnFileMove = { enabled = 'always' },
+        suggest = {
+          completeFunctionCalls = true,
+        },
+        inlayHints = {
+          enumMemberValues = { enabled = true },
+          functionLikeReturnTypes = { enabled = true },
+          parameterNames = { enabled = 'literals' },
+          parameterTypes = { enabled = true },
+          propertyDeclarationTypes = { enabled = true },
+          variableTypes = { enabled = false },
+        },
+      },
+    },
+  },
 }
 
 -- Setup neovim lua configuration
@@ -84,7 +120,7 @@ require('neodev').setup()
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = vim.tbl_deep_extend("force", capabilities, require('lsp-file-operations').default_capabilities()) -- file rename / move with lsp support
+capabilities = vim.tbl_deep_extend('force', capabilities, require('lsp-file-operations').default_capabilities()) -- file rename / move with lsp support
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 -- Ensure the servers above are installed
