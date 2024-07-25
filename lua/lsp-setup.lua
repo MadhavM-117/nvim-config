@@ -75,6 +75,7 @@ local servers = {
   pyright = {},
   rust_analyzer = {},
   tailwindcss = {},
+  tsserver = {},
   vtsls = {
     -- explicitly add default filetypes, so that we can extend
     -- them in related extras
