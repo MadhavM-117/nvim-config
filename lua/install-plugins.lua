@@ -38,7 +38,7 @@ require('lazy').setup {
 
         -- Useful status updates for LSP
         -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-        { 'j-hui/fidget.nvim', opts = {} },
+        { 'j-hui/fidget.nvim',       opts = {} },
 
         -- Additional lua configuration, makes nvim stuff amazing!
         'folke/neodev.nvim',
@@ -84,7 +84,7 @@ require('lazy').setup {
     },
 
     -- Useful plugin to show you pending keybinds.
-    { 'folke/which-key.nvim', opts = {} },
+    { 'folke/which-key.nvim',  opts = {} },
     {
       -- Adds git related signs to the gutter, as well as utilities for managing changes
       'lewis6991/gitsigns.nvim',
@@ -139,7 +139,7 @@ require('lazy').setup {
         'nvim-lua/plenary.nvim',
         'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
         'MunifTanjim/nui.nvim',
-        '3rd/image.nvim', -- Optional image support in preview window: See `# Preview Mode` for more information
+        '3rd/image.nvim',              -- Optional image support in preview window: See `# Preview Mode` for more information
       },
     },
 
@@ -163,12 +163,12 @@ require('lazy').setup {
 
     -- require 'kickstart.plugins.autoformat',
     -- require 'kickstart.plugins.debug',
-    {
-      'nvim-neorg/neorg',
-      lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
-      version = '*', -- Pin Neorg to the latest stable release
-      dependencies = { { 'nvim-neorg/neorg-telescope' } },
-    },
+    -- {
+    --   'nvim-neorg/neorg',
+    --   lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
+    --   version = '*', -- Pin Neorg to the latest stable release
+    --   dependencies = { { 'nvim-neorg/neorg-telescope' } },
+    -- },
 
     { import = 'plugins' },
   },

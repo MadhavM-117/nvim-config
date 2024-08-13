@@ -1,5 +1,7 @@
 return {
-  'nvim-neorg/neorg',
+  'madhavm-117/neorg',
+  branch = 'debug',
+  dependencies = { { 'nvim-neorg/neorg-telescope' } },
   config = function()
     require('neorg').setup {
       load = {
@@ -27,6 +29,7 @@ return {
         },
         ['core.integrations.nvim-cmp'] = {},
         ['core.integrations.telescope'] = {},
+        ['core.integrations.treesitter'] = {},
         ['core.keybinds'] = {},
         ['core.looking-glass'] = {},
         ['core.text-objects'] = {},
