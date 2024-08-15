@@ -20,6 +20,7 @@ return {
               marble = '~/marble/notes',
             },
             default_workspace = 'notes',
+            use_popup = false,
           },
         },
         ['core.esupports.metagen'] = {
