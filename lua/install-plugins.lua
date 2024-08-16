@@ -14,18 +14,7 @@ require('lazy').setup {
 
     -- Detect tabstop and shiftwidth automatically
     'tpope/vim-sleuth',
-    { 'stevearc/dressing.nvim',
-      config = function()
-        require('dressing').setup({
-          input = {
-            title_pos = 'center',
-            win_options = {
-              wrap = false,
-            }
-          }
-        })
-      end
-    },
+    'stevearc/dressing.nvim',
 
     {
       'folke/tokyonight.nvim',
