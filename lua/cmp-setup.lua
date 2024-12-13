@@ -52,7 +52,8 @@ cmp.setup {
     { name = 'luasnip' },
     { name = 'path' },
     { name = 'neorg' },
-    { name = 'tailwindcss-colorizer-cmp' }
+    { name = 'tailwindcss-colorizer-cmp' },
+    { name = 'supermaven' }
   },
 }
 
