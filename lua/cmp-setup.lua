@@ -53,7 +53,6 @@ cmp.setup {
     { name = 'path' },
     { name = 'neorg' },
     { name = 'tailwindcss-colorizer-cmp' },
-    { name = 'supermaven' }
   },
 }
 
