@@ -1,6 +1,6 @@
 return {
-  'madhavm-117/neorg',
-  branch = 'debug',
+  'nvim-neorg/neorg',
+  version = '*',
   dependencies = { { 'nvim-neorg/neorg-telescope' } },
   config = function()
     require('neorg').setup {
