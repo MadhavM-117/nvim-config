@@ -31,6 +31,11 @@ return {
         ['core.integrations.nvim-cmp'] = {},
         ['core.integrations.telescope'] = {},
         ['core.integrations.treesitter'] = {},
+        ['core.journal'] = {
+          config = {
+            journal_folder = '0_journal'
+          }
+        },
         ['core.keybinds'] = {},
         ['core.looking-glass'] = {},
         ['core.text-objects'] = {},
