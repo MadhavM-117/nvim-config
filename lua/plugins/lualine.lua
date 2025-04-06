@@ -10,13 +10,14 @@ return {
         component_separators = '|',
         section_separators = '',
         globalstatus = true,
-        tabline = {
-          lualine_a = {},
-          lualine_b = { 'location' },
-          lualine_c = { 'filename' },
-          lualine_x = {},
-          lualine_y = {},
-          lualine_z = {}
+      },
+      sections = {
+        lualine_c = {
+          {
+            'filename',
+            file_status = true,
+            path = 1 -- path, relative to root. Refer :help lualine
+          }
         }
       },
     }
