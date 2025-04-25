@@ -17,7 +17,6 @@ return {
           config = {
             workspaces = {
               notes = '~/personal/notes',
-              marble = '~/marble/notes',
             },
             default_workspace = 'notes',
             use_popup = false,
