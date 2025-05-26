@@ -7,3 +7,7 @@ vim.g.maplocalleader = " "
 
 -- Install required plugins
 require("plugins.install")
+
+-- Load custom keymaps, and option
+require("config.keymap")
+require("config.options")
