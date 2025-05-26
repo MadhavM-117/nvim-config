@@ -120,7 +120,7 @@ mason_lspconfig.setup_handlers {
         on_attach = on_attach,
         root_dir = function(fname)
           return nvim_lsp.util.root_pattern("tsconfig.json", "tsconfig.*.json")(fname) or
-          nvim_lsp.util.root_pattern("package.json", ".git")(fname)
+              nvim_lsp.util.root_pattern("package.json", ".git")(fname)
         end,
         settings = servers[server_name],
         filetypes = (servers[server_name] or {}).filetypes,
