@@ -15,7 +15,6 @@ Here lies the config for neovim, my current IDE of choice.
 ### Auto-complete
 
 - [ ] nvim-cmp
-- [ ] blink.cmp
 
 ### Keymap Help
 
