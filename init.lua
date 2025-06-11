@@ -11,3 +11,4 @@ require("plugins.install")
 -- Load custom keymaps, and option
 require("config.keymap")
 require("config.options")
+require("config.lsp")
