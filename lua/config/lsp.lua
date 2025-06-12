@@ -13,5 +13,9 @@ wk.add({
 			})
 		end,
 		desc = "[C]ode [A]ction"
-	}
+	},
+
+	-- view docs. refer `:help K` to understand why
+	{ 'K',     vim.lsp.buf.hover,          desc = 'Hover Documentation' },
+	{ '<C-k>', vim.lsp.buf.signature_help, desc = 'Signature Documentation' }
 })
