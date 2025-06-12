@@ -12,5 +12,6 @@ require("lazy").setup({
 		-- Import configs for plugins
 		{ import = "plugins.standard" },
 		{ import = "plugins.lsp" },
+		{ import = "plugins.autocomplete" },
 	},
 })
