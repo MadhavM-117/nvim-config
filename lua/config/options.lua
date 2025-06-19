@@ -42,3 +42,7 @@ vim.o.tabstop = 4
 -- make sure terminal supports this
 vim.o.termguicolors = true
 vim.cmd("colorscheme tokyonight-moon")
+
+-- Neorg config
+vim.wo.conceallevel = 2 -- 2. hide raw markup operators
+vim.wo.foldlevel = 99
