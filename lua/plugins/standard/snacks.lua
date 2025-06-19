@@ -112,6 +112,13 @@ return {
 			desc = "Buffer Lines",
 		},
 		{
+			"<leader>sf",
+			function()
+				Snacks.picker.git_files()
+			end,
+			desc = "Buffer Lines",
+		},
+		{
 			"<leader>sg",
 			function()
 				Snacks.picker.grep()
