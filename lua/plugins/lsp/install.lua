@@ -10,6 +10,9 @@ return {
 			-- lua
 			"lua_ls",
 
+			-- python
+			"pyright",
+
 			-- rust
 			"rust_analyzer",
 
