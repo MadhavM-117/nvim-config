@@ -37,7 +37,7 @@ return {
 			javascript = { "prettierd", "prettier", stop_after_first = true },
 			javascriptreact = { "prettierd", "prettier", stop_after_first = true },
 			lua = { "stylua" },
-			python = { "ruff_organize_imports", "ruff_format", "ruff_fix" },
+			python = { "ruff_organize_imports", "ruff_format", "ruff_fix", "black" },
 			sh = { "shfmt" },
 			typescript = { "prettierd", "prettier", stop_after_first = true },
 			typescriptreact = { "prettierd", "prettier", stop_after_first = true },
