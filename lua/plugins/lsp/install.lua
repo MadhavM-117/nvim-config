@@ -11,7 +11,7 @@ return {
 			"lua_ls",
 
 			-- python
-			"pyright",
+			"basedpyright",
 
 			-- rust
 			"rust_analyzer",
