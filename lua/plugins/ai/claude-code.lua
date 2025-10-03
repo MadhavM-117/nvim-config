@@ -3,6 +3,7 @@ return {
 	dependencies = { "folke/snacks.nvim" },
 	config = true,
 	opts = {
+		auto_start = true,
 		terminal = {
 			provider = "none",
 		}
