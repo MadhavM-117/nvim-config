@@ -10,6 +10,9 @@ return {
 			-- lua
 			"lua_ls",
 
+			-- markdown
+			"marksman",
+
 			-- python
 			"pyright",
 
