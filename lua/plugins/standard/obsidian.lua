@@ -3,6 +3,7 @@ return {
 	---@module 'obsidian'
 	---@type obsidian.config
 	opts = {
+		preferred_link_style = "markdown",
 		legacy_commands = false, -- this will be removed in the next major release
 		workspaces = {
 			{
