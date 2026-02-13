@@ -12,6 +12,11 @@ return {
 			},
 		},
 
+		checkbox = {
+			create_new = false,
+			order = { " ", "x" }
+		},
+
 		daily_notes = {
 			folder = "9-journal",
 			default_tags = nil,
