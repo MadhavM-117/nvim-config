@@ -13,6 +13,10 @@ return {
       },
     },
 
+    ui = {
+      enable = false, -- disable ui, so that markdown rendering is handled independently
+    },
+
     checkbox = {
       create_new = false,
       order = { " ", "x" },
