@@ -55,12 +55,6 @@ My Neovim configuration - a modern IDE setup focused on web development, Python,
 - **folke/todo-comments.nvim** - TODO/FIXME highlighting and search
 - **folke/which-key.nvim** - Keybinding helper
 
-### Note-Taking
-
-- **nvim-neorg/neorg** - Advanced note-taking and organization
-  - Workspace: `~/personal/notes`
-  - Features: journal, calendar, telescope integration
-
 ### Terminal & Navigation
 
 - **christoomey/vim-tmux-navigator** - Seamless tmux/vim navigation
@@ -76,6 +70,3 @@ My Neovim configuration - a modern IDE setup focused on web development, Python,
 - Full LSP support with 12+ language servers
 - Git integration with inline blame and diff
 - AI-assisted development with Claude
-- Organized note-taking with Neorg
-
-
