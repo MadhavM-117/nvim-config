@@ -10,6 +10,6 @@ return {
 			width = "block",
 		},
 		render_modes = true,
-		checkbox = { render_modes = true, checked = { scope_highlight = '@markup.strikethrough' } },
+		checkbox = { render_modes = true, bullet = true, checked = { scope_highlight = '@markup.strikethrough' } },
 	},
 }
