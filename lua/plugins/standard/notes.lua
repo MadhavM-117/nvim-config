@@ -5,10 +5,8 @@ return {
 	cmd = { "Note", "NoteFromTemplate", "DailyNote", "NoteCheckLinks", "NoteFixLink", "NoteTodos" },
 	ft = "markdown",
 	opts = {
-		-- default vault: $XDG_DOCUMENTS_DIR/notes (or ~/Documents/notes)
-		-- vaults = { research = "~/research/notes" },
-		-- templates = { dir = "~/notes/templates", default = "note.md" },
-		-- daily = { dir = "daily", filename = "{{date:YYYY-MM-DD}}.md" },
+		default_vault = "/home/y13/obsidian/personal",
+		daily = { dir = "journal" }
 	},
 	keys = {
 		{ "<leader>t",  nil,                         desc = "Notes",                group = "Notes" },
