@@ -6,7 +6,7 @@ return {
 	ft = "markdown",
 	opts = {
 		default_vault = "/home/y13/obsidian/personal",
-		daily = { dir = "journal" }
+		daily = { dir = "9-journal" }
 	},
 	keys = {
 		{ "<leader>t",  nil,                         desc = "Notes",                group = "Notes" },
