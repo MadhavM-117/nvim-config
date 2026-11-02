@@ -5,7 +5,7 @@ return {
 	cmd = { "Note", "NoteFromTemplate", "DailyNote", "NoteCheckLinks", "NoteFixLink", "NoteTodos" },
 	ft = "markdown",
 	opts = {
-		default_vault = "/home/y13/obsidian/personal",
+		default_vault = "/home/tbx/obsidian/torchbox",
 		daily = { dir = "9-journal" }
 	},
 	keys = {
